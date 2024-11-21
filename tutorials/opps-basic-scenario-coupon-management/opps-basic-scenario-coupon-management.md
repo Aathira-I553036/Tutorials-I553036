@@ -9,6 +9,7 @@ primary_tag: products>sap-business-technology-platform
 ---
 
 # Create Multi-Code Coupons with SAP Omnichannel Promotion Pricing
+
 <!-- description --> Learn how to use SAP Omnichannel Promotion Pricing for creating multi-code coupons in your promotions.
 
 
@@ -49,7 +50,7 @@ In order to continue with the next steps, you need to have already set up your t
 
 You can now create a multi-code coupon object with the **Coupon Management** service. 
 
-<!-- border -->![Create coupon(create_coupon_object.png)]
+<!-- border --> ![Create coupon(create_coupon_object.png)]
 
 Navigate to the [Coupon Management service of SAP Omnichannel Promotion Pricing on SAP Business Accelerator Hub](https://api.sap.com/api/CouponManagementService/overview). Log on with the same login information that you use for your SAP BTP account.
 
