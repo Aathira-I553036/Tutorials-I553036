@@ -9,6 +9,7 @@ primary_tag: products>sap-business-technology-platform
 ---
 
 # Reserve and Redeem a Multi-Code Coupon with SAP Omnichannel Promotion Pricing
+
 <!-- description --> Learn how to reserve and redeem a multi-code coupon in a sales transaction using the Coupon Management service of SAP Omnichannel Promotion Pricing and how to calculate the effective sales price using the Calculation service.
 
 ## Prerequisites
@@ -33,7 +34,7 @@ primary_tag: products>sap-business-technology-platform
 * Business goal: You are a promotion planner working for a coffee machine vendor. As sales has slowed down, you launched a promotional campaign for your target group **coffee lovers** in the **Heidelberg** region. 
 * As part of this promotional campaign, you have created a multi-code coupon with the coupon ID **COFFEE LOVER**. The coupon is valid from **October 1, 2026, to December 31, 2026**. For this, you have generated a batch of unique coupon codes that can be redeemed only once by each customer. 
 * You have distributed the coupon **COFFEE LOVER** with the unique coupon codes to your target customers. 
-* You have also created a promotion in the **Promotion Maintenance** app of **SAP Omnichannel Promotion Pricing**: **Buy a coffee machine and show the coupon COFFEELOVER to get EURO 50 off**. 
+* You have also created a promotion in the **Promotion Maintenance** app of **SAP Omnichannel Promotion Pricing**: **Buy a coffee machine and show the coupon COFFEE LOVER to get EURO 50 off**. 
 * The promotion is valid in your **Heidelberg** store (business unit ID: FC01) from **October 1, 2026, to December 31, 2026**.
 * On **October 25, 2026**, one of your customers that received the coupon **COFFEE LOVER** comes to your **Heidelberg** store to purchase a coffee machine. Your customer selects a coffee machine (material number: `COFFEE_MACHINE`). The **regular sales price** for the **coffee machine** is **Euro 1000**.
 * The POS system calls the **Coupon Management** service to **reserve the coupon code**.
@@ -67,6 +68,8 @@ Navigate to the [Coupon Management service of SAP Omnichannel Promotion Pricing 
 3. On the left-hand side, choose **`Service Operation`**.
 4. Open the **POST** request **`/reserveCouponCode`**.
 5. For the request **body**, copy the following data and paste it into the body:
+
+
 ```json
 { 
   "couponCodeValue": "string",
@@ -75,6 +78,8 @@ Navigate to the [Coupon Management service of SAP Omnichannel Promotion Pricing 
 
 }
 ```
+
+
 6. Choose **Run**.
 8. Make sure you get the HTTP response **200**.
 
@@ -92,7 +97,7 @@ With this, you have reserved the coupon code for 30 minutes. It is also possible
 
 You can now calculate the effective sales price using the **Calculation** service. 
 
-* Scenario: In your **Heidelberg** store (business unit ID: FC01), your customer has selected a coffee machine of **regular price EURO 1000**. At the time of check-out on **October 25, 2026**, the customer presents the coupon code for the multi-code coupon **COFFEELOVER** to the cashier. 
+* Scenario: In your **Heidelberg** store (business unit ID: FC01), your customer has selected a coffee machine of **regular price EURO 1000**. At the time of check-out on **October 25, 2026**, the customer presents the coupon code for the multi-code coupon **COFFEE LOVER** to the cashier. 
 
 
 * Desired Result: The effective sales price for the coffee machine should be EURO 950, as the customer is eligible for the promotion **Buy a coffee machine and show the coupon COFFEE LOVER to get EURO 50 off**.
@@ -106,7 +111,7 @@ Navigate to the [Calculation service of SAP Omnichannel Promotion Pricing on SAP
 1. For **API Environment**, select the trial environment you have created for the **Calculation** service.
 2. Choose **Try Out**.
 3. Open the **POST** request **`/restapi/{tenantname}`**.
-4. Under **tenantName**, enter the **`identityzone`** from the service key you have created for the **Calculation** service in your SAP BTP account. If you need assistance, see step 4 of the tutorial [Set Up SAP Omnichannel Promotion Pricing](https://developers.sap.com/tutorials/opps-manual-setup.html) .
+4. Under **Tenant Name**, enter the **`identityzone`** from the service key you have created for the **Calculation** service in your SAP BTP account. If you need assistance, see step 4 of the tutorial [Set Up SAP Omnichannel Promotion Pricing](https://developers.sap.com/tutorials/opps-manual-setup.html) .
 5. For the **Content Type**, choose **`XML`**.  
 4. Copy the following data and paste it into the **body**:
 ```XML
