@@ -17,7 +17,7 @@ primary_tag: products>sap-business-technology-platform
 - You should be familiar with the SAP BTP trial landscape and terminology (see [Take a Tour of SAP BTP Trial](cp-trial-quick-onboarding)).
 - You have a subaccount in the Cloud Foundry environment, with Microsoft Azure as provider and the Singapore region (AP21).
 - You have set up SAP Omnichannel Promotion Pricing as described in [Set Up SAP Omnichannel Promotion Pricing](opps-manual-setup).
-- You have completed the tutorial <link to the first tutorial>. With this, you have generated a multi-code coupon and a batch of unique coupon codes for it. You should have noted down a code value from the codes thus generated.
+- You have completed the tutorial <link to the first tutorial>[Create Multi-Code Coupons with SAP Omnichannel Promotion Pricing]. With this, you have generated a multi-code coupon and a batch of unique coupon codes for it. You should have noted down a code value from the codes thus generated.
 
 
 ## You will learn
@@ -81,13 +81,13 @@ Navigate to the [Coupon Management service of SAP Omnichannel Promotion Pricing 
 
 
 6. Choose **Run**.
-8. Make sure you get the HTTP response **200**.
+7. Make sure you get the HTTP response **200**.
 
 The response should look like this:
 
 <!-- border -->![Reserve coupon code success](reserve_coupon_code_success.png)
 
-9. From the response, note down the **redemption information ID** **`redemptionInfoID`** and **reservation token** **`reservationToken`**.
+8. From the response, note down the **redemption information ID** **`redemptionInfoID`** and **reservation token** **`reservationToken`**.
 
 With this, you have reserved the coupon code for 30 minutes. It is also possible to extend the reservation by 30 minutes.
 
@@ -113,7 +113,7 @@ Navigate to the [Calculation service of SAP Omnichannel Promotion Pricing on SAP
 3. Open the **POST** request **`/restapi/{tenantname}`**.
 4. Under **Tenant Name**, enter the **`identityzone`** from the service key you have created for the **Calculation** service in your SAP BTP account. If you need assistance, see step 4 of the tutorial [Set Up SAP Omnichannel Promotion Pricing](https://developers.sap.com/tutorials/opps-manual-setup.html) .
 5. For the **Content Type**, choose **`XML`**.  
-4. Copy the following data and paste it into the **body**:
+6. Copy the following data and paste it into the **body**:
 ```XML
 { 
   <PriceCalculate
@@ -182,7 +182,7 @@ Navigate to the [Coupon Management service of SAP Omnichannel Promotion Pricing 
 3. On the left-hand side, choose **Redemption Information**.
 4. Open the **POST** request **`/RedemptionInfo({ID})/CouponManagementService.redeemCouponCode`**.
 5. Under **Parameters**, enter the **`redemptionInfoID`** which you noted down when you reserved the coupon code.
-5. For the **body**, enter the **`reservation token`** which you noted down at the time of reserving the coupon code.
+6. For the **body**, enter the **`reservation token`** which you noted down at the time of reserving the coupon code.
 7. Choose **Run**.
 8. Make sure you get the HTTP response **200**.
 
