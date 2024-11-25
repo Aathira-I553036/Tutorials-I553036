@@ -16,7 +16,7 @@ primary_tag: products>sap-business-technology-platform
 ## You will learn
 - How to use the **Coupon Management** service of SAP Omnichannel Promotion Pricing in your trial environment on SAP BTP. 
 - How to **create and read coupon codes** with the **Coupon Management** service that can be used by marketing channels to drive promotional campaigns. 
-- How to upload a promotional rule which xxxx to **SAP Omnichannel Promotion Pricing** with the help of the **Data Upload** service. 
+- How to upload a promotional rule containing the multi-code coupon to SAP Omnichannel Promotion Pricing with the **Data Upload** service. 
 
 
 
@@ -50,7 +50,7 @@ In order to continue with the next steps, you need to have already set up your t
 
 You can now create a multi-code coupon object with the **Coupon Management** service. 
 
-<!-- border --> ![Create coupon(create_coupon_object.png)]
+<!-- border --> ![Create coupon(coupon_object_creation_request.png)]
 
 Navigate to the [Coupon Management service of SAP Omnichannel Promotion Pricing on SAP Business Accelerator Hub](https://api.sap.com/api/CouponManagementService/overview). Log on with the same login information that you use for your SAP BTP account.
 
@@ -77,7 +77,7 @@ Navigate to the [Coupon Management service of SAP Omnichannel Promotion Pricing 
 
 The response should look like this:
 
-<!-- border -->![Coupon creation success](create_coupon_object_success.png)
+<!-- border -->![Coupon creation success](coupon_object_creation_success.png)
 
 
 8. From the response, note down the technical coupon ID as you will use it later.
@@ -87,7 +87,7 @@ With this, you have created a multi-code coupon with the ID **COFFEE LOVER** and
 
 **Optional**: If you want to check whether you have successfully created the multi-code coupon **COFFEE LOVER**, you can proceed with the following steps:
 
-<!-- border -->![Check created coupon](GET_coupon.png)
+<!-- border -->![Check created coupon](GET_coupon_success.png)
 
 1. On the left-hand side, choose **Coupon**.
 2. Open the **GET** request `/Coupon`.
@@ -101,7 +101,7 @@ With this, you have created a multi-code coupon with the ID **COFFEE LOVER** and
 
 When creating the coupon, the **status** of the coupon is set as **inactive** because it cannot be created in the **active** status. To generate the coupon codes, you must first change the **status** of the coupon object from **INACTIVE** to **ACTIVE**.
 
-<!-- border -->![Change coupon status](change_coupon_status.png)
+<!-- border -->![Change coupon status](change_coupon_status_request.png)
 
 1. On the left-hand side, choose **Coupon**.
 2. Open the **PATCH** request `/Coupon({ID})`.
@@ -117,7 +117,7 @@ When creating the coupon, the **status** of the coupon is set as **inactive** be
 7. Choose **Run**. 
 8. Make sure you get the HTTP response **200**.
 
-<!-- border -->![Coupon status change success](change_coupon_status_success.png)
+<!-- border -->![Coupon status change success](coupon_status_change_success.png)
 
 You have now successfully changed the status of the coupon code. 
 
@@ -127,7 +127,6 @@ You have now successfully changed the status of the coupon code.
 
 Now that you have created the multi-code coupon object and set it to active, you can generate a batch of 100 coupon codes to be used in the promotional campaign.
 
-<!-- border -->![Generate coupon codes](generate_coupon_code.png)
 
 1. On the left-hand side, choose **Coupon**.
 2. Open the **POST** request `/Coupon({ID})/CouponManagementService.generateCouponCodes`.
@@ -143,7 +142,7 @@ Now that you have created the multi-code coupon object and set it to active, you
 6. Choose **Run**.
 7. Make sure you get the HTTP response **200**.
 
-<!-- border -->![Generate coupon codes success](generate_coupon_codes.png)
+<!-- border -->![Generate coupon codes success](generate_coupon_codes_success.png)
 
 With this, you have now created a batch of **100** unique coupon codes for the coupon **COFFEE LOVER**. You must note down the batch ID to read the coupon codes.
 
@@ -154,7 +153,7 @@ With this, you have now created a batch of **100** unique coupon codes for the c
 
 You can now read the coupon codes created using the **Coupon Management** service to circulate the coupon information to the target group as part of your promotional campaign. 
 
-<!-- border -->![Read coupon codes](read_coupon_codes.png)
+<!-- border -->![Read coupon codes](read_coupon_codes_success.png)
 
 1. On the left-hand side, choose **Code Batch**.
 2. Open the **GET** request `/CodeBatch({ID})/codes`.
@@ -327,7 +326,7 @@ Navigate to the [Data Upload service of SAP Omnichannel Promotion Pricing on SAP
 7. Choose **Run**.
 8. Make sure you get the HTTP response **200**.
 
-<!-- border -->![Promotion data upload](promotion_data_upload.png)
+<!-- border -->![Promotion data upload](promotion_data_upload_success.png)
 
 With this, you uploaded the promotional rule "Buy a coffee machine and show coupon COFFEE LOVER to get Euro 50 off" for the **Heidelberg** store (business unit ID: `FC01`) and the validity period **October 1st, 2026 to December 31st, 2026**. 
 
@@ -337,7 +336,7 @@ With this, you uploaded the promotional rule "Buy a coffee machine and show coup
 
 You can use the **Data Access** service for checking your uploaded data. If you need guidance, have a look at step 4 of the tutorial [Apply a Simple Promotion with SAP Omnichannel Promotion Pricing](opps-basic-scenario).
 
-<!-- border -->![Promotion data upload](promotion_data_upload.png)
+<!-- border -->![Promotion data upload](promotion_data_upload_success.png)
 
 
 With this, you are all set to launch your promotional campaign. 
