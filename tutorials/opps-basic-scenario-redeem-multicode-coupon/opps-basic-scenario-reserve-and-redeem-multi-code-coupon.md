@@ -131,12 +131,12 @@ Navigate to the [Calculation service of SAP Omnichannel Promotion Pricing on SAP
                         <ShoppingBasket>
                                     <LineItem>
                                                 <SequenceNumber>0</SequenceNumber>
-                                                <MerchandiseHierarchy ID="R3">COFFEEMACHINES</MerchandiseHierarchy>
+                                                <MerchandiseHierarchy ID="R3">COFFEE_MACHINES</MerchandiseHierarchy>
                                                 <Sale ItemType="Stock" NonDiscountableFlag="false" FixedPriceFlag="true" FrequentShopperPointsEligibilityFlag="true">
                                                             <TaxIncludedInPriceFlag>false</TaxIncludedInPriceFlag>
                                                             <NonPieceGoodFlag>false</NonPieceGoodFlag>
                                                             <NotConsideredByPriceEngineFlag>false</NotConsideredByPriceEngineFlag>
-                                                            <ItemID>COFFEEMACHINE</ItemID>
+                                                            <ItemID>COFFEE_MACHINE</ItemID>
                                                             <Quantity Units="1" UnitOfMeasureCode="EA">1</Quantity>
                                                             <RegularSalesUnitPrice Currency="EUR">1000.0</RegularSalesUnitPrice>
                                                 </Sale>
