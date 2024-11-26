@@ -4,7 +4,7 @@ author_name: Aathira P
 author_profile: https://github.com/Aathira-I553036
 auto_validation: true
 time: 20
-tags: [tutorial>advanced, topic>cloud, products>sap-business-technology-platform, products>sap-btp--cloud-foundry-environment]
+tags: [tutorial>basic, topic>cloud, products>sap-business-technology-platform, products>sap-btp--cloud-foundry-environment]
 primary_tag: products>sap-business-technology-platform
 ---
 
@@ -51,6 +51,7 @@ In order to continue with the next steps, you need to have already set up your t
 You can now create a multi-code coupon object with the **Coupon Management** service. 
 
 <!-- border --> ![Create coupon(coupon_object_creation_request.png)]
+
 
 Navigate to the [Coupon Management service of SAP Omnichannel Promotion Pricing on SAP Business Accelerator Hub](https://api.sap.com/api/CouponManagementService/overview). Log on with the same login information that you use for your SAP BTP account.
 
@@ -118,6 +119,7 @@ When creating the coupon, the **status** of the coupon is set as **inactive** be
 8. Make sure you get the HTTP response **200**.
 
 <!-- border -->![Coupon status change success](coupon_status_change_success.png)
+
 
 You have now successfully changed the status of the coupon code. 
 
