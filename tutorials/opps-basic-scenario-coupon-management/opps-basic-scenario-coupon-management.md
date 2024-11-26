@@ -344,7 +344,7 @@ With this, you are all set to launch your promotional campaign.
 
 ### What to Do Next
 
- Navigate to the intermediate group [Set up Complex Promotions with SAP Omnichannel Promotion Pricing](group.opps-complex-promotion) and continue with the next tutorial [Reserve and Redeem a Multi-Code Coupon with SAP Omnichannel Promotion Pricing].
+ Navigate to the intermediate group [Set up Complex Promotions with SAP Omnichannel Promotion Pricing](https://developers.sap.com/group.opps-complex-promotion.html) and continue with the next tutorial [Reserve and Redeem a Multi-Code Coupon with SAP Omnichannel Promotion Pricing].
 
 
 ### Additional Information
