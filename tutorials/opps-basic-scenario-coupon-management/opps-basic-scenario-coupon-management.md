@@ -64,7 +64,7 @@ Navigate to the [Coupon Management service of SAP Omnichannel Promotion Pricing 
   "status": "INACTIVE",
   "displayID": "COFFEE LOVER",
   "type": "MULTICODE",
-  "name": "COFFEELOVER",
+  "name": "COFFEE LOVER",
   "description": "Discount 50 Euro for coffee machine",
   "validFrom": "2026-10-01",
   "validTo": "2026-12-31",
