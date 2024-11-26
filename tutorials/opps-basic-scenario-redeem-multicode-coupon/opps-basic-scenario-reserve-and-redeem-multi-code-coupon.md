@@ -4,7 +4,7 @@ author_name: Aathira P
 author_profile: https://github.com/Aathira-I553036
 auto_validation: true
 time: 20
-tags: [tutorial>advanced, topic>cloud, products>sap-business-technology-platform, products>sap-btp--cloud-foundry-environment]
+tags: [tutorial>basic, topic>cloud, products>sap-business-technology-platform, products>sap-btp--cloud-foundry-environment]
 primary_tag: products>sap-business-technology-platform
 ---
 
