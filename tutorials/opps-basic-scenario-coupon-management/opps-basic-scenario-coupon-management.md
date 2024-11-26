@@ -336,7 +336,7 @@ With this, you uploaded the promotional rule "Buy a coffee machine and show coup
 
 You can use the **Data Access** service for checking your uploaded data. If you need guidance, have a look at step 4 of the tutorial [Apply a Simple Promotion with SAP Omnichannel Promotion Pricing](opps-basic-scenario).
 
-<!-- border -->![Promotion data upload](promotion_data_upload_success.png)
+<!-- border -->![Data access success](data_access_success.png)
 
 
 With this, you are all set to launch your promotional campaign. 
