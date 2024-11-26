@@ -21,10 +21,10 @@ primary_tag: products>sap-business-technology-platform
 
 
 ## Prerequisites
-- You have registered for a trial account on [SAP BTP](hcp-create-trial-account) in the Singapore - Azure region.
-- You should be familiar with the SAP BTP trial landscape and terminology (see [Take a Tour of SAP BTP Trial](cp-trial-quick-onboarding)).
+- You have registered for a trial account on [SAP BTP](https://account.hanatrial.ondemand.com/) in the Singapore - Azure region.
+- You should be familiar with the SAP BTP trial landscape and terminology (see [Take a Tour of SAP BTP Trial](https://developers.sap.com/tutorials/cp-trial-quick-onboarding.html)).
 - You have a subaccount in the Cloud Foundry environment, with Microsoft Azure as provider and the Singapore region (AP21).
-- You have set up SAP Omnichannel Promotion Pricing as described in [Set Up SAP Omnichannel Promotion Pricing](opps-manual-setup).
+- You have set up SAP Omnichannel Promotion Pricing as described in [Set Up SAP Omnichannel Promotion Pricing](https://developers.sap.com/tutorials/opps-manual-setup.html).
 
 
 ---
