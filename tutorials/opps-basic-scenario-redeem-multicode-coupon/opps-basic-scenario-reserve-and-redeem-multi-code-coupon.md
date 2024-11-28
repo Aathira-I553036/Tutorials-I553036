@@ -4,7 +4,7 @@ author_name: Aathira P
 author_profile: https://github.com/Aathira-I553036
 auto_validation: true
 time: 20
-tags: [tutorial>basic, topic>cloud, products>sap-business-technology-platform, products>sap-btp--cloud-foundry-environment]
+tags: [tutorial>beginner, topic>cloud, products>sap-business-technology-platform, products>sap-btp--cloud-foundry-environment]
 primary_tag: products>sap-business-technology-platform
 ---
 
@@ -32,10 +32,10 @@ primary_tag: products>sap-business-technology-platform
 
 
 * Business goal: You are a promotion planner working for a coffee machine vendor. As sales has slowed down, you launched a promotional campaign for your target group **coffee lovers** in the **Heidelberg** region. 
-* As part of this promotional campaign, you have created a multi-code coupon with the coupon ID **COFFEE LOVER**. The coupon is valid from **October 1, 2026, to December 31, 2026**. For this, you have generated a batch of unique coupon codes that can be redeemed only once by each customer. 
+* As part of this promotional campaign, you have created a multi-code coupon with the coupon ID **COFFEE LOVER**. The coupon is valid from **October 1, 2026 to December 31, 2026**. For this, you have generated a batch of unique coupon codes that can be redeemed only once by each customer. 
 * You have distributed the coupon **COFFEE LOVER** with the unique coupon codes to your target customers. 
 * You have also created a promotion in the **Promotion Maintenance** app of **SAP Omnichannel Promotion Pricing**: **Buy a coffee machine and show the coupon COFFEE LOVER to get EURO 50 off**. 
-* The promotion is valid in your **Heidelberg** store (business unit ID: FC01) from **October 1, 2026, to December 31, 2026**.
+* The promotion is valid in your **Heidelberg** store (business unit ID: FC01) from **October 1, 2026 to December 31, 2026**.
 * On **October 25, 2026**, one of your customers that received the coupon **COFFEE LOVER** comes to your **Heidelberg** store to purchase a coffee machine. Your customer selects a coffee machine (material number: `COFFEE_MACHINE`). The **regular sales price** for the **coffee machine** is **Euro 1000**.
 * The POS system calls the **Coupon Management** service to **reserve the coupon code**.
 * The cashier continues to complete the purchase. The POS system calls the **Calculation** service with the shopping cart information. The Calculation service **calculates the effective sales price for the coffee machine** (regular price minus discount granted by the coupon) and returns it to the POS.
@@ -198,6 +198,6 @@ With this, you have successfully redeemed the coupon code. The redemption inform
 * [Coupon Management](https://help.sap.com/docs/omnichannel-promotion-pricing/service-guide/coupon-management)
 * [Trial Documentation](https://help.sap.com/docs/OPP/0c145d124b784b548b618cda8a5b2aba/31b8aedc8ce14fcd9f6021ad4f6323c9.html)
 * [SAP Omnichannel Promotion Pricing on the SAP Business Accelerator Hub](https://help.sap.com/docs/OPP/7c87270e23c64c2aa922ce297a6df23d/67a9da084cf84e058cb3a3911971bdd0.html?version=Cloud)
-* [Video: SAP Omnichannel Promotion Pricing in a nutshell](https://www.sap.com/assetdetail/2020/07/9060b3a5-a67d-0010-87a3-c30de2ffd8ff.html)
+* [Video: SAP Omnichannel Promotion Pricing in a nutshell](https://www.sap.com/assetdetail/2020/07/9060b3a5-a67d-0010-87a3-c30de2ffd8ff.html) 
 
 ---
