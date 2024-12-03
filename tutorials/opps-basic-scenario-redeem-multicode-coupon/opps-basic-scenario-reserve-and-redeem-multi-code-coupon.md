@@ -21,9 +21,9 @@ primary_tag: products>sap-business-technology-platform
 
 
 ## You will learn
-- How to use the **Coupon Management** service of **SAP Omnichannel Promotion Pricing** in your trial environment on SAP BTP. 
-- How to **reserve and redeem a coupon code** with the **Coupon Management** service. 
-- How to calculate the effective sales price in a sales transaction with the **Calculation** service of **SAP Omnichannel Promotion Pricing** by applying a coupon that triggers a discount on an item in the shopping cart. 
+- How to use the **Coupon Management** service of SAP Omnichannel Promotion Pricing in your trial environment on SAP BTP 
+- How to **reserve and redeem a coupon code** with the **Coupon Management** service 
+- How to calculate the effective sales price in a sales transaction with the **Calculation** service of SAP Omnichannel Promotion Pricing by applying a coupon that triggers a discount on an item in the shopping cart 
 
 
 ---
@@ -34,28 +34,28 @@ primary_tag: products>sap-business-technology-platform
 * Business goal: You are a promotion planner working for a coffee machine vendor. As sales has slowed down, you launched a promotional campaign for your target group **coffee lovers** in the **Heidelberg** region. 
 * As part of this promotional campaign, you have created a multi-code coupon with the coupon ID **COFFEE LOVER**. The coupon is valid from **October 1, 2026 to December 31, 2026**. For this, you have generated a batch of unique coupon codes that can be redeemed only once by each customer. 
 * You have distributed the coupon **COFFEE LOVER** with the unique coupon codes to your target customers. 
-* You have also created a promotion in the **Promotion Maintenance** app of **SAP Omnichannel Promotion Pricing**: **Buy a coffee machine and show the coupon COFFEE LOVER to get EURO 50 off**. 
-* The promotion is valid in your **Heidelberg** store (business unit ID: FC01) from **October 1, 2026 to December 31, 2026**.
-* On **October 25, 2026**, one of your customers that received the coupon **COFFEE LOVER** comes to your **Heidelberg** store to purchase a coffee machine. Your customer selects a coffee machine (material number: `COFFEE_MACHINE`). The **regular sales price** for the **coffee machine** is **Euro 1000**.
+* You have also created a promotion: **Buy a coffee machine and show the coupon COFFEE LOVER to get EURO 50 off**. 
+* The promotion is valid in your **Heidelberg** store (business unit ID: `FC01`) from **October 1, 2026 to December 31, 2026**.
+* On **October 25, 2026**, one of your customers that received the coupon **COFFEE LOVER** comes to your **Heidelberg** store to purchase a coffee machine. Your customer selects a coffee machine (material number: `COFFEE_MACHINE`). The **regular sales price** for the coffee machine is **EUR 1000**.
 * The POS system calls the **Coupon Management** service to **reserve the coupon code**.
-* The cashier continues to complete the purchase. The POS system calls the **Calculation** service with the shopping cart information. The Calculation service **calculates the effective sales price for the coffee machine** (regular price minus discount granted by the coupon) and returns it to the POS.
-* Your customer completes the purchase. The POS triggers a request to the **Coupon Management** service **to redeem the coupon code**. The redemption information is  returned to the POS, which confirms the completion of the payment to the customer. Your customer is now done and returns home happily with his new coffee machine.
+* The cashier continues to complete the purchase. The POS system calls the **Calculation** service with the shopping cart information. The Calculation service **calculates the effective sales price** for the coffee machine (regular price minus discount granted by the coupon) and returns it to the POS.
+* Your customer completes the purchase. The POS triggers a request to the **Coupon Management** service to **redeem the coupon code**. The redemption information is returned to the POS, which confirms the completion of the payment to the customer. Your customer is now done and returns home happily with their new coffee machine.
 
 
-## Create environments in SAP Business Accelerator Hub
+### Create environments in SAP Business Accelerator Hub
 
 
 In order to continue with the next steps, you need to have already set up your trial environments for the **Coupon Management service, Data Upload service, Data Access service, and Calculation service** in the **SAP Business Accelerator Hub**. If you need guidance, have a look at step 2 of the tutorial [Apply a Simple Promotion with SAP Omnichannel Promotion Pricing](opps-basic-scenario). 
 
 
-### Reserve a Coupon Code
+### Reserve a coupon code
 
 
 You can now reserve a coupon code for the multi-code coupon **COFFEE LOVER** using the **Coupon Management** service. 
 
-* Scenario: In your **Heidelberg** store (business unit ID: FC01), your customer has selected a coffee machine (material number: `COFFEE_MACHINE`, regular sales price: Euro 1000). At the time of check-out, the customer presents the coupon code for the multi-code coupon **COFFEE LOVER** to the cashier. The client system calls the **Coupon Management** service to reserve the coupon code.
+**Scenario**: In your **Heidelberg** store (business unit ID: `FC01`), your customer has selected a coffee machine (material number: `COFFEE_MACHINE`, regular sales price: EUR 1000). At the time of check-out, the customer presents the coupon code for the multi-code coupon **COFFEE LOVER** to the cashier. The client system calls the **Coupon Management** service to reserve the coupon code.
 
-* Desired Result: The coupon code is reserved. 
+**Desired Result**: The coupon code is reserved. 
 
 
 Let's see if this is the case:
@@ -64,43 +64,37 @@ Navigate to the [Coupon Management service of SAP Omnichannel Promotion Pricing 
 
 
 1. Navigate to the **Try Out** section.
-2. For **API Environment**, select the trial environment you have created for the **Coupon Management** service.
-3. On the left-hand side, choose **`Service Operation`**.
-4. Open the **POST** request **`/reserveCouponCode`**.
-5. For the request **body**, copy the following data and paste it into the body:
-
-
+2. On the right-hand side, select the trial environment you have created for the **Coupon Management** service.
+3. On the left-hand side, choose **Service Operation**.
+4. Open the **POST** request `/reserveCouponCode`.
+5. Copy the following data and paste it into the body:
 ```json
 { 
   "couponCodeValue": "string",
    "reservationDate": "2026-10-25",
    "transactionID": "string"
-
 }
 ```
-
-
 6. Choose **Run**.
 7. Make sure you get the HTTP response **200**.
+8. From the response, note down the redemption information ID `redemptionInfoID` and the reservation token `reservationToken`. 
 
 The response should look like this:
 
 <!-- border -->![Reserve coupon code success](reserve_coupon_code_success.png)
 
-8. From the response, note down the **redemption information ID** **`redemptionInfoID`** and **reservation token** **`reservationToken`**.
 
 With this, you have reserved the coupon code for 30 minutes. It is also possible to extend the reservation by 30 minutes.
 
 
-### Calculate the Effective Sales Price
+### Calculate the effective sales price
 
 
 You can now calculate the effective sales price using the **Calculation** service. 
 
-* Scenario: In your **Heidelberg** store (business unit ID: FC01), your customer has selected a coffee machine of **regular price EURO 1000**. At the time of check-out on **October 25, 2026**, the customer presents the coupon code for the multi-code coupon **COFFEE LOVER** to the cashier. 
+**Scenario:** In your **Heidelberg** store (business unit ID: `FC01`), your customer has selected a coffee machine with a regular price of **EUR 1000**. At the time of check-out on **October 25, 2026**, the customer presents the coupon code for the multi-code coupon **COFFEE LOVER** to the cashier. 
 
-
-* Desired Result: The effective sales price for the coffee machine should be EURO 950, as the customer is eligible for the promotion **Buy a coffee machine and show the coupon COFFEE LOVER to get EURO 50 off**.
+**Desired Result:** The effective sales price for the coffee machine should be **EUR 950**, as the customer is eligible for the promotion **Buy a coffee machine and show the coupon COFFEE LOVER to get EUR 50 off**.
 
 
 Let's see if this is the case:
@@ -108,12 +102,12 @@ Let's see if this is the case:
 Navigate to the [Calculation service of SAP Omnichannel Promotion Pricing on SAP Business Accelerator Hub](https://api.sap.com/api/PriceCalculation/overview). Log on with the same login information that you use for your SAP BTP account.
 
 
-1. For **API Environment**, select the trial environment you have created for the **Calculation** service.
-2. Choose **Try Out**.
-3. Open the **POST** request **`/restapi/{tenantname}`**.
-4. Under **Tenant Name**, enter the **`identityzone`** from the service key you have created for the **Calculation** service in your SAP BTP account. If you need assistance, see step 4 of the tutorial [Set Up SAP Omnichannel Promotion Pricing](https://developers.sap.com/tutorials/opps-manual-setup.html) .
-5. For the **Content Type**, choose **`XML`**.  
-6. Copy the following data and paste it into the **body**:
+1. Navigate to the **Try Out** section.
+2. On the right-hand side, select the trial environment you have created for the **Calculation** service.
+3. Open the **POST** request `/restapi/{tenantname}`.
+4. Under **Tenant Name**, enter the `identityzone`** from the service key you have created for the **Calculation** service in your SAP BTP account. If you need assistance, see step 4 of the tutorial [Set Up SAP Omnichannel Promotion Pricing](https://developers.sap.com/tutorials/opps-manual-setup.html) .
+5. As the content type, choose **XML**.  
+6. Copy the following data and paste it into the body:
 ```XML
 { 
   <PriceCalculate
@@ -153,23 +147,23 @@ Navigate to the [Calculation service of SAP Omnichannel Promotion Pricing on SAP
 </PriceCalculate>
 }
 ```
-7. Choose **Run**.
-8. Make sure you get the HTTP response **200**.
+1. Choose **Run**.
+2. Make sure you get the HTTP response **200**.
 
 The response should look like this:
 
 <!-- border -->![Calculation success](calculation_success.png)
 
-With this, the **Calculation** service has calculated the effective sales price for the coffee machine as EURO 950 by applying the promotion **Buy a coffee machine and show the coupon COFFEE LOVER to get EURO 50 off**. It then returns the effective sales price to the POS.
+With this, the **Calculation** service has calculated the effective sales price of **EUR 950** for the coffee machine by applying the promotion **Buy a coffee machine and show the coupon COFFEE LOVER to get EUR 50 off**. It then returns the effective sales price to the POS.
 
-### Redeem the Coupon Code
+### Redeem the coupon code
 
 
 You can now redeem the coupon code for the multi-code coupon **COFFEE LOVER** using the Coupon Management service. 
 
-* Scenario: The customer has completed the purchase of the coffee machine for which he used the coupon **COFFEE LOVER** with the respective coupon code. The POS system calls the **Coupon Management** service to redeem the coupon code. The redemption information is returned to the system which then confirms the completion of the purchase.
+**Scenario:** The customer has completed the purchase of the coffee machine for which they used the coupon **COFFEE LOVER** with the respective coupon code. The POS system calls the **Coupon Management** service to redeem the coupon code. The redemption information is returned to the system which then confirms the completion of the purchase.
 
-* Desired Result: The coupon code is redeemed. 
+**Desired Result:** The coupon code is redeemed. 
 
 
 Let's see if this is the case:
@@ -177,12 +171,12 @@ Let's see if this is the case:
 Navigate to the [Coupon Management service of SAP Omnichannel Promotion Pricing on SAP Business Accelerator Hub](https://api.sap.com/api/CouponManagementService/overview). Log on with the same login information that you use for your SAP BTP account.
 
 
-1. For **API Environment**, select the trial environment you have created for the **Coupon Management** service.
-2. Choose **Try Out**.
+1. Navigate to the **Try Out** section.
+2. On the right-hand side, select the trial environment you have created for the **Coupon Management** service.
 3. On the left-hand side, choose **Redemption Information**.
-4. Open the **POST** request **`/RedemptionInfo({ID})/CouponManagementService.redeemCouponCode`**.
-5. Under **Parameters**, enter the **`redemptionInfoID`** which you noted down when you reserved the coupon code.
-6. For the **body**, enter the **`reservation token`** which you noted down at the time of reserving the coupon code.
+4. Open the **POST** request `/RedemptionInfo({ID})/CouponManagementService.redeemCouponCode`.
+5. Under **Parameters**, enter the `redemptionInfoID` which you noted down when you reserved the coupon code.
+6. In the body, enter the `reservationToken` which you noted down at the time of reserving the coupon code.
 7. Choose **Run**.
 8. Make sure you get the HTTP response **200**.
 
